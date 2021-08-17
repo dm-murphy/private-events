@@ -12,7 +12,7 @@ class EventsController < ApplicationController
   end
 
   def show
-    @events = Event.all
+    @event = Event.find(params[:id])
   end
 
   private

@@ -4,5 +4,6 @@ Rails.application.routes.draw do
   devise_for :users
   root "events#index"
 
-  resources :events
+  get 'events/index'
+  get 'events/create'
 end
