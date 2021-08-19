@@ -4,5 +4,7 @@
   <%= @user.email %>
 </div>
 <div>
-  <%= @user.events %>
+  <% @user.events.each do |event| %>
+    <li>Event Date: <%= event.date %></li>
+  <% end %>
 </div>
