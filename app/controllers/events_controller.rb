@@ -1,3 +1,5 @@
+# app/controllers/events_controller.rb
+
 class EventsController < ApplicationController
   def index
     @events = Event.all
@@ -7,13 +9,18 @@ class EventsController < ApplicationController
     @event = Event.find(params[:id])
   end
 
-  # Not sure what this should be or if it needs to be here?
   def new
     @event = Event.new
   end
 
   def create
-    @event = current_user.build_event(event_params)
+    @event = current_user.events.build(event_params)
+
+    if @event.save
+      redirect_to root_path
+    else
+      render :new
+    end
   end
 
   
