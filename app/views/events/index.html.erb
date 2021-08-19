@@ -1,1 +1,8 @@
 <h1>Private Events!!!</h1>
+<div>
+  <% @events.each do |event| %>
+    <li>Event Date: <%= event.date %></li>
+    <li>Event Creator: <%= event.creator.email %></li>
+    <p></p>
+  <% end %>
+</div>
