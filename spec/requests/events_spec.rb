@@ -18,7 +18,8 @@ RSpec.describe "Events", type: :request do
   end
 
   # params missing error
-
+  # NoMethodEorr: undefined method 'events' for nil:NilClass
+  
   # describe "POST /create" do
   #   it "returns http success" do
   #     event = create(:event, :skip_validate)
