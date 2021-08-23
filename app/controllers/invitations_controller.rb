@@ -14,7 +14,8 @@ class InvitationsController < ApplicationController
   def create
     @invitation = current_user.invitations.build(invitation_params)
 
-    if @invitation.save
+    # Use bang for debugging 
+    if @invitation.save!
       redirect_to root_path
     else
       render :new
