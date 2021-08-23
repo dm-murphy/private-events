@@ -7,4 +7,9 @@
 </li>
 <li>Attend this Event: <%= render 'invitation_form' %>
 </li>
+<li>Users attending this event: 
+  <% @event.users.each do |user| %>
+    <%= user.email %>
+  <% end %>
+</li>
 </div>
