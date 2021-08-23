@@ -1,10 +1,23 @@
 <h1>Users#show</h1>
 <p>Find me in app/views/users/show.html.erb</p>
 <div>
+  <p> Email address:
   <%= @user.email %>
+  </p>
 </div>
 <div>
+  <p> Hosted Events:
   <% @user.events.each do |event| %>
     <li>Event Date: <%= event.date %></li>
   <% end %>
+  </p>
+</div>
+<p>
+</p>
+<div>
+  <p> Attending Events:
+  <% @user.invitations.each do |invitation| %>
+    <li><%= invitation.event.date %></li>
+  <% end %>
+  </p>
 </div>
