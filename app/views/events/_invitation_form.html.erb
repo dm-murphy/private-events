@@ -1,4 +1,4 @@
 <%= form_with(url: invitations_path, method: "post") do |form| %>
-  <%= form.hidden_field :event_id %>
+  <%= form.hidden_field :event_id, :value => @event.id %>
   <%= form.submit "Accept Invitation" %>
 <% end %>
