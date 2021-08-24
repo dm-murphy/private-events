@@ -5,7 +5,12 @@
 </li>
 <li>Event Creator: <%= @event.creator.email %>
 </li>
-<li>Attend this Event: <%= render 'invitation_form' %>
+<li>Attend this Event:
+  <% if user_signed_in? %>
+    <%= render 'invitation_form' %>
+  <% else %>
+    <p> Log in to attend this event</p>
+  <% end %>  
 </li>
 <li>Users attending this event: 
   <% @event.users.each do |user| %>
