@@ -13,8 +13,8 @@
   <% end %>  
 </li>
 <li>Users attending this event: 
-  <% @event.users.each do |user| %>
-    <%= user.email %>
+  <% @event.attendees.each do |attendee| %>
+    <%= attendee.email %>
   <% end %>
 </li>
 </div>
