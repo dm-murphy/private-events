@@ -15,9 +15,24 @@
 <p>
 </p>
 <div>
-  <p> Attending Events:
+  <% upcoming_event_invitations = [] %>
+  <% past_event_invitations = [] %>
+
   <% @user.invitations.each do |invitation| %>
-    <li><%= invitation.event.date %></li>
+    <% if invitation.event.date > Time.now %>
+      <% upcoming_event_invitations.push(invitation) %>
+    <% else %>
+      <% past_event_invitations.push(invitation) %>
+    <% end %>
   <% end %>
+  <p>Upcoming Events:
+    <% upcoming_event_invitations.each do |invitation| %>
+      <li><%= invitation.event.date %></li>
+    <% end %>
+  </p>
+  <p>Past Events:
+    <% past_event_invitations.each do |invitation| %>
+      <li><%= invitation.event.date %></li>
+    <% end %>
   </p>
 </div>
