@@ -1,4 +1,8 @@
-<%= form_with(url: invitations_path, method: "post") do |form| %>
-  <%= form.hidden_field :event_id, :value => @event.id %>
-  <%= form.submit "Accept Invitation" %>
+<% if current_user.attended_events.include? @event %>
+    You have already accepted this invitation   
+<% else %>
+  <%= form_with(url: invitations_path, method: "post") do |form| %>
+    <%= form.hidden_field :event_id, :value => @event.id %>
+    <%= form.submit "Accept Invitation" %>
+  <% end %>
 <% end %>

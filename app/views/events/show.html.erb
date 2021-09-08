@@ -7,6 +7,7 @@
 </li>
 <li>Attend this Event:
   <% if user_signed_in? %>
+    
     <%= render 'invitation_form' %>
   <% else %>
     <p> Log in to attend this event</p>
