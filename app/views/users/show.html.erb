@@ -1,5 +1,4 @@
 <h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
 <div>
   <p> Email address:
   <%= @user.email %>
@@ -7,32 +6,22 @@
 </div>
 <div>
   <p> Hosted Events:
-  <% @user.events.each do |event| %>
-    <li>Event Date: <%= event.date %></li>
-  <% end %>
+    <% @user.events.each do |event| %>
+      <li>Event Date: <%= event.date %></li>
+    <% end %>
   </p>
 </div>
-<p>
-</p>
 <div>
-  <% upcoming_event_invitations = [] %>
-  <% past_event_invitations = [] %>
-
-  <% @user.invitations.each do |invitation| %>
-    <% if invitation.event.date > Time.now %>
-      <% upcoming_event_invitations.push(invitation) %>
-    <% else %>
-      <% past_event_invitations.push(invitation) %>
-    <% end %>
+  <p>Upcoming Events:</p>
+  <% upcoming_invites = @user.attended_events.where("date >= ?", Time.current) %>
+  <% upcoming_invites.each do |event| %>
+    <li><%= event.date %></li>
   <% end %>
-  <p>Upcoming Events:
-    <% upcoming_event_invitations.each do |invitation| %>
-      <li><%= invitation.event.date %></li>
-    <% end %>
-  </p>
-  <p>Past Events:
-    <% past_event_invitations.each do |invitation| %>
-      <li><%= invitation.event.date %></li>
-    <% end %>
-  </p>
+</div>
+<div>
+  <p>Past Events:</p>
+  <% past_invites = @user.attended_events.where("date < ?", Time.current) %>
+  <% past_invites.each do |event| %>
+    <li><%= event.date %></li>
+  <% end %>
 </div>
