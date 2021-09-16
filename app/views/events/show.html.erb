@@ -21,4 +21,11 @@
 <li>Edit this Event:
 <%= link_to 'Edit', edit_event_path(@event) %>
 </li>
+<% if @event.creator == current_user %>
+  <li>Delete this Event:
+  <%= link_to 'Destroy', event_path(@event), 
+              method: :delete, 
+              data: { confirm: "Are you sure you want to delete this event?" } %>
+  </li>
+<% end %>
 </div>
