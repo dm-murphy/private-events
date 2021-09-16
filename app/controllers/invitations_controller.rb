@@ -22,6 +22,13 @@ class InvitationsController < ApplicationController
     end
   end
 
+  def destroy
+    @invitation = Invitation.find(params[:id])
+    @invitation.destroy
+
+    redirect_to root_path
+  end
+
   private
 
     def invitation_params

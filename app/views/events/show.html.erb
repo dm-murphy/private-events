@@ -13,6 +13,16 @@
     <p> Log in to attend this event</p>
   <% end %>  
 </li>
+<li>Remove Yourself from This Event:
+  <% if user_signed_in? %>
+    <%= render 'remove_invitation_form' %>
+    
+  <% else %>
+    <p>Log in to remove yourself from this event</p>
+  <% end %>
+</li>
+
+
 <li>Users attending this event: 
   <% @event.attendees.each do |attendee| %>
     <%= attendee.email %>
