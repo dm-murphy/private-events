@@ -1,9 +1,12 @@
-<h1>Private Events!!!</h1>
+<h1>All Events</h1>
 <div>
   <p>Past Events:</p>
   <% @past_events.each do |event| %>
     <li>Event Date: <%= event.date %></li>
     <li>Event Creator: <%= event.creator.email %></li>
+    <li>Event Name: <%= event.title %></li>
+    <li>Description: <%= event.description %></li>
+    <%= link_to 'View Event', event_path(event.id) %>
     <p></p>
   <% end %>
 </div>
@@ -12,6 +15,9 @@
   <% @upcoming_events.each do |event| %>
     <li>Event Date: <%= event.date %></li>
     <li>Event Creator: <%= event.creator.email %></li>
+    <li>Event Name: <%= event.title %></li>
+    <li>Description: <%= event.description %></li>
+    <%= link_to 'View Event', event_path(event.id) %>
     <p></p>
   <% end %>
 </div>
