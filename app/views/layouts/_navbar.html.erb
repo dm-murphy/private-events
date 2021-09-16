@@ -2,6 +2,7 @@
   <div class='container'>
     <nav>
       <ul>
+        <li><%= link_to "All Events", root_path %></li>
         <li><%= link_to "New Event", new_event_path %></li>
         <% if user_signed_in? %>
           <li><%= link_to "Your Events", user_path(current_user) %></li>
