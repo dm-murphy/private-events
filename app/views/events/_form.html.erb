@@ -1,4 +1,8 @@
 <%= form_with model: @event do |form| %>
-  <%= form.date_field :date %>
+  <%= form.label :title, "Event Name:" %></br>
+  <%= form.text_field :title %></br>
+  </br>
+  <%= form.date_field :date %></br>
+  </br>
   <%= form.submit "Create" %>
 <% end %>

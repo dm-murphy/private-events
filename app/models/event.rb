@@ -3,6 +3,8 @@ class Event < ApplicationRecord
   has_many :invitations
   has_many :attendees, through: :invitations, source: :user
 
+  validates :title, presence: true, length: { in: 1..100 }
+
   scope :past, -> { where("date < ?", Time.current) }
   scope :upcoming, -> { where("date >= ?", Time.current) }
 end
