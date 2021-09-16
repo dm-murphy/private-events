@@ -8,6 +8,11 @@
   <p> Hosted Events:
     <% @user.events.each do |event| %>
       <li>Event Date: <%= event.date %></li>
+      <li>Event Name: <%= event.title %></li>
+      <li>Description: <%= event.description %></li>
+      <%= link_to 'View Event', event_path(event.id) %>
+      </br>
+      </br>
     <% end %>
   </p>
 </div>
@@ -15,13 +20,23 @@
   <p>Upcoming Events:</p>
   <% upcoming_invites = @user.attended_events.where("date >= ?", Time.current) %>
   <% upcoming_invites.each do |event| %>
-    <li><%= event.date %></li>
+    <li>Event Date: <%= event.date %></li>
+    <li>Event Name: <%= event.title %></li>
+    <li>Description: <%= event.description %></li>
+    <%= link_to 'View Event', event_path(event.id) %>
+    </br>
+    </br>
   <% end %>
 </div>
 <div>
   <p>Past Events:</p>
   <% past_invites = @user.attended_events.where("date < ?", Time.current) %>
   <% past_invites.each do |event| %>
-    <li><%= event.date %></li>
+    <li>Event Date: <%= event.date %></li>
+    <li>Event Name: <%= event.title %></li>
+    <li>Description: <%= event.description %></li>
+    <%= link_to 'View Event', event_path(event.id) %>
+    </br>
+    </br>
   <% end %>
 </div>
