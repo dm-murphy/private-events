@@ -7,5 +7,7 @@
   </br>
   <%= form.date_field :date %></br>
   </br>
+  <%= form.label :exclusive, "Check Box to Make This an Exclusive Event (private invitations only):" %></br>
+  <%= form.check_box :exclusive %></br>
   <%= form.submit "Create" %>
 <% end %>

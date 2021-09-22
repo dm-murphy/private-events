@@ -1,0 +1,7 @@
+
+<%= form_with model: Invitation.new do |form| %>
+    <%= form.hidden_field :event_id, :value => @event.id %>
+    <%= form.text_field :user_id %>
+    
+    <%= form.submit "Send Invitation" %>
+  <% end %>

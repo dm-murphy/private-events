@@ -26,6 +26,13 @@
   <% end %>
 </li>
 
+<% if user_signed_in? && current_user == @event.creator && @event.exclusive == true %>
+<div>
+  <p>Invite Guests to Your Exclusive Event:</p>
+  <%= render 'guest_list_form' %>
+</div>
+<% end %>
+
 
 <li>Users attending this event: 
   <% @event.attendees.each do |attendee| %>

@@ -12,7 +12,9 @@ class InvitationsController < ApplicationController
   end
 
   def create
-    @invitation = current_user.invitations.build(invitation_params)
+    @invitation = Invitation.new(invitation_params)
+  
+    # @invitation = current_user.invitations.build(invitation_params)
 
     # Use bang for debugging 
     if @invitation.save!
@@ -32,6 +34,6 @@ class InvitationsController < ApplicationController
   private
 
     def invitation_params
-      params.require(:invitation).permit(:event_id)
+      params.require(:invitation).permit(:event_id, :user_id)
     end
 end
