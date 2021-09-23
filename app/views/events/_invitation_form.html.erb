@@ -6,6 +6,7 @@
   <%= form_with model: Invitation.new do |form| %>
     <%= form.hidden_field :event_id, :value => @event.id %>
     <%= form.hidden_field :user_id, :value => current_user.id %>
+    <%= form.hidden_field :acceptance, :value => true %>
     <%= form.submit "Accept Invitation" %>
   <% end %>
 <% end %>
