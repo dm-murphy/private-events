@@ -31,9 +31,14 @@
   <p>Invite Guests to Your Exclusive Event:</p>
   <%= render 'guest_list_form' %>
 </div>
+<li>Users Invited to this event: 
+  <% @event.attendees.each do |attendee| %>
+    <%= attendee.email %>
+  <% end %>
+</li>
 <% end %>
 
-<li>TEST Accepted Users:
+<li>Users Attending this Event:
   <% @event.attendees.each do |attendee| %>
     <% invite = attendee.invitations.find_by(event_id: @event.id) %>
     <% if invite.acceptance == true %>
@@ -42,13 +47,7 @@
   <% end %>
 </li>
 
-<li>Users attending this event: 
-  <% @event.attendees.each do |attendee| %>
-    <%= attendee.email %>
-  <% end %>
-</li>
-
-<% if current_user == @event.creator %>
+<% if @event.creator == current_user %>
   <li>Edit this Event:
   <%= link_to 'Edit', edit_event_path(@event) %>
 <% end %>
