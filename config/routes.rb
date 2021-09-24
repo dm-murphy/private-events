@@ -4,5 +4,5 @@ Rails.application.routes.draw do
   root "events#index"
 
   resources :events, only: [:index, :show, :create, :new, :edit, :update, :destroy]
-  resources :invitations, only: [:index, :show, :create, :new, :destroy]
+  resources :invitations, only: [:index, :show, :create, :new, :destroy, :update]
 end

@@ -31,6 +31,20 @@ class InvitationsController < ApplicationController
     redirect_to root_path
   end
 
+  def update
+    @invitation = Invitation.find(params[:id])
+    
+    if @invitation.update(invitation_params)
+      redirect_to root_path
+    else
+      redirect_to root_path
+    end
+  end
+
+  def edit
+    @invitation = Invitation.find(params[:id])
+  end
+
   private
 
     def invitation_params

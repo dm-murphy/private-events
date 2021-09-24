@@ -33,6 +33,15 @@
 </div>
 <% end %>
 
+<li>TEST Accepted Users:
+  <% @event.attendees.each do |attendee| %>
+    <% invite = attendee.invitations.find_by(event_id: @event.id) %>
+    <% if invite.acceptance == true %>
+      <%= attendee.email %>
+    <% end %>
+  <% end %>
+</li>
+
 <li>Users attending this event: 
   <% @event.attendees.each do |attendee| %>
     <%= attendee.email %>

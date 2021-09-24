@@ -1,0 +1,15 @@
+<%= "exclusive invitation response!!!" %>
+<% invite = current_user.invitations.find_by(event_id: @event.id) %>
+<% if invite.nil? %>
+  <%= "This is an exclusive event. You must be privately invited to attend." %>
+<% elsif invite.acceptance == true %>
+    You have already accepted this invitation   
+<% elsif current_user.attended_events.include? @event %>
+    You have been invited to this event! How lucky!
+    <%= form_with model: invite do |form| %>
+      <%= form.hidden_field :acceptance, :value => true %>
+      <%= form.submit "Accept Your Exclusive Invitation" %>
+    <% end %>
+<% else %>
+    I shouldn't be seeing this. 
+<% end %>

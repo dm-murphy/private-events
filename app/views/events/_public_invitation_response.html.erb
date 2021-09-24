@@ -1,20 +1,5 @@
-<% if @event.exclusive == true %>
-  <%= render 'exclusive_invitation_response' %>
-<% else %>
-  <%= render 'public_invitation_response' %>
- <% end %>
-
-
-
-
-
-
-<% if false %>
-
 <% if current_user.attended_events.include? @event %>
     You have already accepted this invitation   
-<% elsif @event.exclusive == true %>
-    This is an exclusive event. You must be privately invited to attend.
 <% else %>
   <%= form_with model: Invitation.new do |form| %>
     <%= form.hidden_field :event_id, :value => @event.id %>
@@ -22,6 +7,4 @@
     <%= form.hidden_field :acceptance, :value => true %>
     <%= form.submit "Accept Invitation" %>
   <% end %>
-<% end %>
-
 <% end %>
