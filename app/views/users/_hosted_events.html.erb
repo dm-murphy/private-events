@@ -1,0 +1,10 @@
+<h3>Hosted Events:</h3>
+  <% @user.events.each do |event| %>
+    <li>Event Date: <%= event.date %></li>
+    <li>Event Name: <%= event.title %></li>
+    <li>Description: <%= event.description %></li>
+    <%= link_to 'View Event', event_path(event.id) %>
+    </br>
+    </br>
+  <% end %>
+  
