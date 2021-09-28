@@ -1,7 +1,7 @@
 <h1>Edit This Event</h1>
 
 <% if @event.creator == current_user %>
-  <%= render 'form' %>
+  <%= render 'new_event_form' %>
 <% else %>
   <p>Only the Event Creator can edit this event</p>
 <% end %>
