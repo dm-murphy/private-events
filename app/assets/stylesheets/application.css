@@ -14,24 +14,37 @@
  *= require_self
  */
 
- .container {
+ .navbar {
    width: 1250px;
    margin: auto;
    margin-top: 50px;
  }
 
- .form-container {
+ .form-navbar {
    width:750px;
  }
 
 header {
-  background: #9E50DE;
+  background: #18509d;
 }
 
 header::after {
   content: '';
   display: table;
   clear: both;
+}
+
+h1 {
+  float: left;
+  color: #fff200;
+  text-transform: lowercase;
+  text-decoration: none;
+  border-bottom: 3px solid white;
+}
+
+h1 a {
+  text-decoration: none;
+  color: #fff200;
 }
 
 nav {
