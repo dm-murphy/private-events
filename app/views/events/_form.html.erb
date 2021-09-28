@@ -1,13 +1,14 @@
 <%= form_with model: @event do |form| %>
-  <%= form.label :title, "Event Name:" %></br>
-  <%= form.text_field :title %></br>
-  </br>
-  <%= form.label :description, "Description:" %></br>
-  <%= form.text_area :description %></br>
-  </br>
-  <%= form.date_field :date %></br>
-  </br>
-  <%= form.label :exclusive, "Check Box to Make This an Exclusive Event (private invitations only):" %></br>
-  <%= form.check_box :exclusive %></br>
+  <%= form.label :title, "Name your event" %><br>
+  <%= form.text_field :title %><br>
+  <br>
+  <%= form.label :description, "Describe it a little (or a lot)" %><br>
+  <%= form.text_area :description %><br>
+  <br>
+  <%= form.label :description, "Date and time" %><br>
+  <%= form.date_field :date %><br>
+  <br>
+  <%= form.label :exclusive, "Make this event exclusive? (private invitations only)" %></br>
+  <%= form.check_box :exclusive %><br>
   <%= form.submit "Create" %>
 <% end %>

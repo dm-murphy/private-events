@@ -1,32 +1,7 @@
 <h1>All Events</h1>
 <div>
-  <p>Past Events:</p>
-  <% @past_events.each do |event| %>
-    <li>Event Date: <%= event.date %></li>
-    <li>Event Creator: <%= event.creator.email %></li>
-    <li>Event Name: <%= event.title %></li>
-    <li>Description: <%= event.description %></li>
-    <%= link_to 'View Event', event_path(event.id) %>
-    <p></p>
-  <% end %>
+  <%= render 'upcoming_events' %>
 </div>
 <div>
-  <p>Upcoming Events:</p>
-  <% @upcoming_events.each do |event| %>
-    <li>Event Date: <%= event.date %></li>
-    <li>Event Creator: <%= event.creator.email %></li>
-    <li>Event Name: <%= event.title %></li>
-    <li>Description: <%= event.description %></li>
-    <%= link_to 'View Event', event_path(event.id) %>
-    <p></p>
-  <% end %>
-</div>
-<div>
- <% if user_signed_in? %>
-   <p><%= link_to current_user.email, edit_user_registration_path%></p>
-   <p><%= link_to "Logout", destroy_user_session_path, method: :delete %></p>
- <% else %>
-   <p><%= link_to 'Sign In', new_user_session_path %></p>
-   <p><%= link_to 'Sign Up', new_user_registration_path %></p>
- <% end %>
+  <%= render 'past_events' %>
 </div>

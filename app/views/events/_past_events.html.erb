@@ -1,0 +1,11 @@
+<h2>Past Events:</h2>
+  <% @past_events.each do |event| %>
+    <p>
+      <li>Event Date: <%= event.date %></li>
+      <li>Event Creator: <%= event.creator.email %></li>
+      <li>Event Name: <%= event.title %></li>
+      <li>Description: <%= event.description %></li>
+      <%= link_to 'View Event', event_path(event.id) %>
+    </p>
+  <% end %>
+  
