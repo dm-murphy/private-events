@@ -1,30 +1,27 @@
-<h1>Private Events #show</h1>
-
+<h1>Check this out</h1>
 <div>
-<li>Event Name: <%= @event.title %>
-</li>
-<li>Description: <%= @event.description %>
-</li>
-<li>Event Date: <%= @event.date %>
-</li>
-<li>Event Creator: <%= @event.creator.email %>
-</li>
-<li>Attend this Event:
-  <% if user_signed_in? %>
+  <h2><%= @event.title %></h2>
+  <h3><%= @event.date.strftime("%A, %B %-d, %Y") %></h3>
+  <p><%= @event.description %>
+  </p>
+  <h3>Created by <%= link_to @event.creator.email, user_path(@event.creator) %></h3>
+</div>
+  <li>Attend this Event:
+    <% if user_signed_in? %>
     
-    <%= render 'invitation_form' %>
-  <% else %>
-    <p> Log in to attend this event</p>
-  <% end %>  
-</li>
-<li>Remove Yourself from This Event:
-  <% if user_signed_in? %>
-    <%= render 'remove_invitation_form' %>
+      <%= render 'invitation_form' %>
+    <% else %>
+      <p> Log in to attend this event</p>
+    <% end %>  
+  </li>
+  <li>Remove Yourself from This Event:
+    <% if user_signed_in? %>
+      <%= render 'remove_invitation_form' %>
     
-  <% else %>
-    <p>Log in to remove yourself from this event</p>
-  <% end %>
-</li>
+    <% else %>
+      <p>Log in to remove yourself from this event</p>
+    <% end %>
+  </li>
 
 <% if user_signed_in? && current_user == @event.creator && @event.exclusive == true %>
 <div>
@@ -60,4 +57,4 @@
               data: { confirm: "Are you sure you want to delete this event?" } %>
   </li>
 <% end %>
-</div>
+
