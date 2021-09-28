@@ -1,0 +1,8 @@
+<div>
+  <% if @event.exclusive == true %>
+    <%= render 'exclusive_invitation_process' %>
+    <%= render 'guest_list_process' %>
+  <% else %>
+    <%= render 'public_invitation_process' %>
+  <% end %>
+</div>

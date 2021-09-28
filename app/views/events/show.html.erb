@@ -6,14 +6,12 @@
   <h3>Created by <%= link_to @event.creator.email, user_path(@event.creator) %></h3>
 </div>
 <div>
-  <% if @event.exclusive == true %>
-    <%= render 'exclusive_invitation_process' %>
+  <% past_events = Event.past %>
+  <% if past_events.include?(@event) %>
+    <p> This event has passed. Ask the attendees how it went!</p>
   <% else %>
-    <%= render 'public_invitation_process' %>
+    <%= render 'invitation_process' %>
   <% end %>
-</div>
-<div>
-  <%= render 'guest_list_process' if @event.exclusive == true %>
 </div>
 <div>
   <%= render 'attendance_list' %>
