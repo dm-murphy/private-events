@@ -1,4 +1,4 @@
-<h4>Who's going?</h4>
+<h4>Attending:</h4>
   <% @event.attendees.each do |attendee| %>
     <% invite = attendee.invitations.find_by(event_id: @event.id) %>
     <li><%= attendee.email if invite.acceptance == true %></li>
