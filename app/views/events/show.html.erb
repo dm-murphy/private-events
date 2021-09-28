@@ -16,21 +16,8 @@
   <%= render 'guest_list_process' if @event.exclusive == true %>
 </div>
 <div>
-  <%= render 'attendance_list.html.erb' %>
+  <%= render 'attendance_list' %>
 </div>
-
-
-<% if @event.creator == current_user %>
-  <li>Edit this Event:
-  <%= link_to 'Edit', edit_event_path(@event) %>
-<% end %>
-
-</li>
-<% if @event.creator == current_user %>
-  <li>Delete this Event:
-  <%= link_to 'Destroy', event_path(@event), 
-              method: :delete, 
-              data: { confirm: "Are you sure you want to delete this event?" } %>
-  </li>
-<% end %>
-
+<div>
+  <%= render 'creator_edit_links' if @event.creator == current_user %>
+</div>
