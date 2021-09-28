@@ -13,20 +13,10 @@
   <% end %>
 </div>
 <div>
-  <% if @event.exclusive == true %>
-    <%= render 'guest_list_process' %>
-  <% end %>
+  <%= render 'guest_list_process' if @event.exclusive == true %>
 </div>
-
 <div>
-<h4>Whose going?</h4>
-  <% @event.attendees.each do |attendee| %>
-    <% invite = attendee.invitations.find_by(event_id: @event.id) %>
-    <% if invite.acceptance == true %>
-      <%= attendee.email %>
-    <% end %>
-  <% end %>
-</li>
+  <%= render 'attendance_list.html.erb' %>
 </div>
 
 
