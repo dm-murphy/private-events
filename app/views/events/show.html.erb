@@ -12,20 +12,14 @@
     <%= render 'public_invitation_process' %>
   <% end %>
 </div>
-
-<% if user_signed_in? && current_user == @event.creator && @event.exclusive == true %>
 <div>
-  <p>Invite Guests to Your Exclusive Event:</p>
-  <%= render 'guest_list_form' %>
-</div>
-<li>Users Invited to this event: 
-  <% @event.attendees.each do |attendee| %>
-    <%= attendee.email %>
+  <% if @event.exclusive == true %>
+    <%= render 'guest_list_process' %>
   <% end %>
-</li>
-<% end %>
+</div>
 
-<li>Users Attending this Event:
+<div>
+<h4>Whose going?</h4>
   <% @event.attendees.each do |attendee| %>
     <% invite = attendee.invitations.find_by(event_id: @event.id) %>
     <% if invite.acceptance == true %>
@@ -33,6 +27,8 @@
     <% end %>
   <% end %>
 </li>
+</div>
+
 
 <% if @event.creator == current_user %>
   <li>Edit this Event:

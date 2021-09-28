@@ -1,0 +1,5 @@
+<% if user_signed_in? && current_user == @event.creator %>
+  <h3>Invite Guests to Your Exclusive Event</h3>
+  <%= render 'guest_list_form' %>
+  <%= render 'guest_list_invites' %>
+<% end %>

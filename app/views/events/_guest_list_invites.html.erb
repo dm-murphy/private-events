@@ -1,0 +1,4 @@
+<h4>Guests already invited</h4> 
+<% @event.attendees.each do |attendee| %>
+  <li><%= attendee.email %></li>
+<% end %>
