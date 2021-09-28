@@ -1,0 +1,5 @@
+<% if user_signed_in? %>
+  <%= render 'exclusive_invitation_response' %>
+<% else %>
+  <p><em>This is an Exclusive Event. Log in to see if you've received a private invitation.</em></p>
+<% end %>  

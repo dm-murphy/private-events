@@ -2,26 +2,16 @@
 <div>
   <h2><%= @event.title %></h2>
   <h3><%= @event.date.strftime("%A, %B %-d, %Y") %></h3>
-  <p><%= @event.description %>
-  </p>
+  <p><%= @event.description %></p>
   <h3>Created by <%= link_to @event.creator.email, user_path(@event.creator) %></h3>
 </div>
-  <li>Attend this Event:
-    <% if user_signed_in? %>
-    
-      <%= render 'invitation_form' %>
-    <% else %>
-      <p> Log in to attend this event</p>
-    <% end %>  
-  </li>
-  <li>Remove Yourself from This Event:
-    <% if user_signed_in? %>
-      <%= render 'remove_invitation_form' %>
-    
-    <% else %>
-      <p>Log in to remove yourself from this event</p>
-    <% end %>
-  </li>
+<div>
+  <% if @event.exclusive == true %>
+    <%= render 'exclusive_invitation_process' %>
+  <% else %>
+    <%= render 'public_invitation_process' %>
+  <% end %>
+</div>
 
 <% if user_signed_in? && current_user == @event.creator && @event.exclusive == true %>
 <div>

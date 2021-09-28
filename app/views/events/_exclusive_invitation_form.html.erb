@@ -1,0 +1,5 @@
+You have been privately invited to this event:
+<%= form_with model: invite do |form| %>
+  <%= form.hidden_field :acceptance, :value => true %>
+   <%= form.submit "Accept Your Exclusive Invitation" %>
+<% end %>
