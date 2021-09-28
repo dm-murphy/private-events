@@ -1,4 +1,5 @@
 You have been privately invited to this event:
+<% invite = current_user.invitations.find_by(event_id: @event.id) %>
 <%= form_with model: invite do |form| %>
   <%= form.hidden_field :acceptance, :value => true %>
    <%= form.submit "Accept Your Exclusive Invitation" %>
