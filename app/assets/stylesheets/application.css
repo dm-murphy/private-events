@@ -54,3 +54,6 @@
   font-size: 14px;
 }
 
+.nav-links a:hover {
+  color:#fff200;
+}
