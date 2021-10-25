@@ -1,4 +1,4 @@
-<div>
+<div class="footer">
  <% if user_signed_in? %>
    <p><%= link_to current_user.email, edit_user_registration_path%></p>
    <p><%= link_to "Logout", destroy_user_session_path, method: :delete %></p>
