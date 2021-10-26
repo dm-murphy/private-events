@@ -1,10 +1,10 @@
 <div class="footer">
  <% if user_signed_in? %>
-   <p><%= link_to current_user.email, edit_user_registration_path%></p>
-   <p><%= link_to "Logout", destroy_user_session_path, method: :delete %></p>
+   <p class="footer-text"><%= link_to current_user.email, edit_user_registration_path%></p>
+   <p class="footer-text"><%= link_to "Logout", destroy_user_session_path, method: :delete %></p>
  <% else %>
-   <p><%= link_to 'Sign In', new_user_session_path %></p>
-   <p><%= link_to 'Sign Up', new_user_registration_path %></p>
+   <p class="footer-text"><%= link_to 'Sign In', new_user_session_path %></p>
+   <p class="footer-text"><%= link_to 'Sign Up', new_user_registration_path %></p>
  <% end %>
- <p><%= link_to 'GitHub', "https://github.com/dm-murphy/private-events#readme"%></p>
+ <p class="footer-text"><%= link_to 'GitHub', "https://github.com/dm-murphy/private-events#readme"%></p>
 </div>

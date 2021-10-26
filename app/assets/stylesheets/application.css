@@ -70,14 +70,14 @@ body {
   display: flex;
   justify-content: center;
   gap: 20px;
-  padding: 5px;
 }
 
-.footer p, a {
+.footer-text a {
   color: white;
   text-decoration: none;
   font-family: Verdana, Helvetica, sans-serif;
   font-size: 14px;
+  padding: 5px;
 }
 
 .main-content {
