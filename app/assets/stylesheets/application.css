@@ -30,7 +30,6 @@ body {
 
 .logo {
   flex-shrink: 0;
-  /* margin: 0 0 0 15px; */
   color: #fff200;
   text-transform: lowercase;
   text-decoration: none;
@@ -57,7 +56,7 @@ body {
   text-decoration: none;
   letter-spacing: 1px;
   text-transform: lowercase;
-  font-family: Verdana, Arial, Helvetica, sans-serif;
+  font-family: Verdana, Helvetica, sans-serif;
   font-size: 14px;
 }
 
@@ -71,11 +70,14 @@ body {
   display: flex;
   justify-content: center;
   gap: 20px;
+  padding: 5px;
 }
 
 .footer p, a {
   color: white;
   text-decoration: none;
+  font-family: Verdana, Helvetica, sans-serif;
+  font-size: 14px;
 }
 
 .main-content {
