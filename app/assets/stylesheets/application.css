@@ -93,5 +93,11 @@ body {
 }
 
 .event-index {
-  display: flex;  
+  display: flex;
+  gap: 24px;
+}
+
+.event-list {
+  list-style: none;
+  padding-left: 0;
 }
