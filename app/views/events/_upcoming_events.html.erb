@@ -1,10 +1,12 @@
-<h3>Upcoming Events:</h3>
+<h3 id="upcoming">Upcoming Events</h3>
   <% @upcoming_events.each do |event| %>
-    <ul class="event-list">
-      <li>Event Date: <%= event.date %></li>
-      <li>Event Creator: <%= event.creator.email %></li>
-      <li>Event Name: <%= event.title %></li>
-      <li>Description: <%= event.description %></li>
-      <%= link_to 'View Event', event_path(event.id) %>
-    </ul>
+    <div class="event-container">
+      <ul class="event-list">
+        <li class="event-title"><%= event.title %></li>
+        <li class="event-date"><%= event.date.strftime("%B %-d %Y") %></li>
+        <li>Hosted by: <%= event.creator.email %></li>
+        <br>
+        <button class="view-link"><%= link_to "Let's Go!", event_path(event.id) %>
+      </ul>
+    </div>
   <% end %>
