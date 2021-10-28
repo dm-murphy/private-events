@@ -111,10 +111,9 @@ h2 {
 }
 
 .event-container {
-  border: 3px solid #18509d;;
   border-radius: 10px;
   margin: 10px 10px 10px 10px;
-  padding: 10px;
+  padding: 20px;
   background-color: #18509d;
   color: #fff200;
 }
@@ -152,13 +151,19 @@ h2 {
   font-size: 16px;
 }
 
-#upcoming {
+#upcoming, #past {
   align-self: center;
   text-transform: lowercase;
   text-align: center;
   font-size: 24px;
   font-weight: 300;
-  /* border-bottom: 2px solid #18509d;
-   */
-   text-decoration: underline #18509d;
+  text-decoration: underline #18509d;
+}
+
+.past-event-container {
+  border-radius: 10px;
+  margin: 10px 10px 10px 10px;
+  padding: 20px;
+  background-color: #8899aa
+
 }
