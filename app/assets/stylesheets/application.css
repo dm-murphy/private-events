@@ -19,6 +19,14 @@ body {
   display: flex;
   flex-direction: column;
   height: 100vh;
+  font-family: Helvetica, sans-serif;
+}
+
+h2 {
+  text-transform: lowercase;
+  font-size: 35px;
+  border-bottom: 3px solid #18509d;
+  color: #020304;
 }
 
  .navbar {
@@ -35,6 +43,8 @@ body {
   text-decoration: none;
   border-bottom: 3px solid white;
   font-size: 30px;
+  font-family: Times, serif;
+  font-weight: 700;
 }
 
 .logo a {
@@ -95,6 +105,9 @@ body {
 .event-index {
   display: flex;
   gap: 24px;
+  border-radius: 10px;
+  background-color: #F5F5F5;
+  padding: 25px;
 }
 
 .event-list {
