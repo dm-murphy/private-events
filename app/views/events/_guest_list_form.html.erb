@@ -2,7 +2,8 @@
   <% users_with_no_invitation = User.where.not(id: @event.invitations.map { |invitation| invitation.user.id } ) %>
   <% if users_with_no_invitation.present? %>
     <%= form.hidden_field :event_id, :value => @event.id %>
-    <%= form.collection_select :user_id, users_with_no_invitation.order(:email), :id, :email %>
-    <%= form.submit "Send Invitation", class: "invitation-button" %>
+    <div><%= form.collection_select :user_id, users_with_no_invitation.order(:email), :id, :email %> </div>
+    <br>
+    <div class="flex"><%= form.submit "Send Invitation", class: "invitation-button" %></div>
   <% end %>
 <% end %>

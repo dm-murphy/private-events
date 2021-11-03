@@ -284,6 +284,10 @@ h2 {
   color: white;
   padding: 25px;
   border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: center;
 }
 
 .invitation-button {
@@ -293,6 +297,15 @@ h2 {
   padding: 10px 20px 10px 20px;
   font-weight: bold;
   font-size: 16px;
+  align-self: center;
+  transition-duration: 0.2s;
+  border: 3px solid white;
+}
+
+.invitation-button:hover {
+  background-color: black;
+  color: white;
+  border: 3px solid white;
 }
 
 .guest-list {
@@ -312,4 +325,9 @@ h2 {
 .creator-link a {
   text-decoration: none;
   color: white;
+}
+
+.flex {
+  display: flex;
+  justify-content: center;
 }
