@@ -12,7 +12,7 @@ Creators of an event can edit or delete their events as well. Technically, creat
 
 ## Demo Online
 
-A version will be uploaded to Heroku soon!
+Check out this [Private Events](https://sleepy-citadel-75700.herokuapp.com/) app running on Heroku.
 
 ## Try It Local
 
@@ -27,8 +27,10 @@ $ rails db:migrate
 
 ## What Was Learned
 
-Building this project helped me understand much more about the MVC process and ActiveRecord associations. In particular, it was tricky learning how to wrap my head around using through tables, but once I did it made a lot more sense for approaching associations between models this way. 
+Building this project helped me understand much more about the MVC process and ActiveRecord associations. In particular, it was tricky learning how to wrap my head around using through tables, but once I did, it made a lot more sense for approaching associations between models this way. 
 
-I also learned about using simple scopes, building ActiveRecord queries and relying on partials to keep views clean and organized. Instead of using a CSS framework like Bulma, I decided to keep all the CSS vanilla and do my own styling. 
+I also learned about using simple scopes, building ActiveRecord queries and relying on partials to keep views clean and organized. 
 
-I pushed myself out of my comfort zone with this project in a few ways. Not only did I go after all the 'extra credit' steps for this assignment but I added on some more as well! I wanted the app not only to allow either public events or private events, but both! So I was able to distinguish between the Event models and build out the invitation process for either style. Additionally, I thought it silly that Users could still accept invitations to attend events that have already passed, so I made sure to limit this to upcoming events only. 
+Instead of using a CSS framework like Bulma, I decided to keep all the CSS vanilla and do my own styling for most of the Rails views. I left the Devise views in their default state but played around with my Event #index/#show views as well as the User #show view.
+
+I pushed myself out of my comfort zone with this project in a few ways. Not only did I go after all the 'extra credit' steps for this assignment but I added on some more as well! I wanted the app not only to allow either public events or private events, but both! So I was able to distinguish between the Event models and build out the invitation process for either style. Additionally, I thought it silly that Users could still accept invitations to attend events that have already passed, so I made sure to limit this to upcoming events only.
