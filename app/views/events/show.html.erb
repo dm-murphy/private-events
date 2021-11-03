@@ -1,20 +1,20 @@
-<div>
-  <h2><%= @event.title %></h2>
-  <h3><%= @event.date.strftime("%A, %B %-d, %Y") %></h3>
+<h3 id="show-title"><%= @event.title %></h2>
+<div class="show-container">
+  <h4 id="show-date"><%= @event.date.strftime("%A, %B %-d, %Y") %></h3>
+  <h4>Created by <%= link_to @event.creator.email, user_path(@event.creator) %></h3>
   <p><%= @event.description %></p>
-  <h3>Created by <%= link_to @event.creator.email, user_path(@event.creator) %></h3>
-</div>
-<div>
-  <% past_events = Event.past %>
-  <% if past_events.include?(@event) %>
-    <p> This event has passed. Ask the attendees how it went!</p>
-  <% else %>
-    <%= render 'invitation_process' %>
-  <% end %>
-</div>
-<div>
-  <%= render 'attendance_list' %>
-</div>
-<div>
-  <%= render 'creator_edit_links' if @event.creator == current_user %>
+  <div>
+    <% past_events = Event.past %>
+    <% if past_events.include?(@event) %>
+      <p class="event-alert"> This event has passed, but ask how it went!</p>
+    <% else %>
+      <%= render 'invitation_process' %>
+    <% end %>
+  </div>
+  <div>
+    <%= render 'attendance_list' %>
+  </div>
+  <div>
+    <%= render 'creator_edit_links' if @event.creator == current_user %>
+  </div>
 </div>

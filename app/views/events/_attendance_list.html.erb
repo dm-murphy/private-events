@@ -1,5 +1,7 @@
-<h4>Attending:</h4>
-  <% @event.attendees.each do |attendee| %>
-    <% invite = attendee.invitations.find_by(event_id: @event.id) %>
+<h4>Attending</h4>
+<% @event.attendees.each do |attendee| %>
+  <% invite = attendee.invitations.find_by(event_id: @event.id) %>
+  <ul class="guest-list">
     <li><%= attendee.email if invite.acceptance == true %></li>
-  <% end %>
+  </ul>
+<% end %>

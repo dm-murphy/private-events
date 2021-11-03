@@ -3,6 +3,6 @@
   <% if users_with_no_invitation.present? %>
     <%= form.hidden_field :event_id, :value => @event.id %>
     <%= form.collection_select :user_id, users_with_no_invitation.order(:email), :id, :email %>
-    <%= form.submit "Send Invitation" %>
+    <%= form.submit "Send Invitation", class: "invitation-button" %>
   <% end %>
 <% end %>

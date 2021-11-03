@@ -1,7 +1,7 @@
 <% if current_user.attended_events.include? @event %>
   You have already accepted this invitation
   <%= button_to 'Remove yourself from this event', invitation_path(current_user.invitations.find_by!(event_id: @event.id)), 
-                 method: :delete, data: { confirm: 'Do you really want to remove yourself from this event?' } %>
+                 method: :delete, data: { confirm: 'Do you really want to remove yourself from this event?' }, class: "invitation-button" %>
 <% else %>
   <p>You are not currently attending this event</p>
 <% end %>

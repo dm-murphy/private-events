@@ -242,3 +242,74 @@ h2 {
   padding: 20px;
   min-width: 275px;
 }
+
+.show-container {
+  display: flex;
+  flex-direction: column;
+  background-color: #F5F5F5;
+  gap: 24px;
+  border-radius: 10px;
+  padding: 25px;
+}
+
+#show-title {
+  font-size: 36px;
+  font-weight: bold;
+  color: black;
+  text-align: center;
+  text-decoration: underline #18509d;
+  text-underline-offset: 7px;
+}
+
+#show-date {
+  font-size: 24px;
+  text-align: center;
+}
+
+.show-container h4 {
+  margin: 10px 30px 0px 30px;
+}
+
+.event-alert {
+  font-weight: bold;
+  font-size: 18px;
+  border-radius: 15px;
+  padding: 20px 35px 20px 35px;
+  background-color: #fff200;
+  color: #36454f
+}
+
+.invitation-container {
+  background-color: orange;
+  color: white;
+  padding: 25px;
+  border-radius: 15px;
+}
+
+.invitation-button {
+  background-color: white;
+  border: none;
+  border-radius: 25px;
+  padding: 10px 20px 10px 20px;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.guest-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.creator-link {
+  border-radius: 10px;
+  border: none;
+  background-color: black;
+  margin: 10px;
+  padding: 10px;
+
+}
+
+.creator-link a {
+  text-decoration: none;
+  color: white;
+}

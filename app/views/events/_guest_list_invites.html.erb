@@ -1,4 +1,6 @@
 <h4>Guests already invited</h4> 
 <% @event.attendees.each do |attendee| %>
-  <li><%= attendee.email %></li>
+  <ul class="guest-list">
+    <li><%= attendee.email %></li>
+  </ul>
 <% end %>
