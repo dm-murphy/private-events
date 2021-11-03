@@ -1,10 +1,12 @@
-<h3>Past Events:</h3>
-  <% past_invites = @user.attended_events.where("date < ?", Time.current) %>
-  <% past_invites.each do |event| %>
-    <li>Event Date: <%= event.date %></li>
-    <li>Event Name: <%= event.title %></li>
-    <li>Description: <%= event.description %></li>
-    <%= link_to 'View Event', event_path(event.id) %>
-    </br>
-    </br>
-  <% end %>
+<h3 class="user-header">Past Events</h3>
+<% past_invites = @user.attended_events.where("date < ?", Time.current) %>
+<% past_invites.each do |event| %>
+  <div class="user-past-container">
+    <ul class="user-event-list">
+      <li class="user-event-title"><%= event.title %></li>
+      <li class="user-event-date"><%= event.date.strftime("%B %-d %Y") %></li>
+      <br>
+      <button class="user-details-button"><%= link_to "Details", event_path(event.id) %>
+    </ul>
+  </div>
+<% end %>

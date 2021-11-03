@@ -1,11 +1,13 @@
 <h2>User Profile</h2>
 <h3><%= @user.email %></h3>
-<div>
-  <%= render 'hosted_events' %>
-</div>
-<div>
-  <%= render 'upcoming_events' %>
-</div>
-<div>
-  <%= render 'past_events' %>
+<div class="user-container">
+  <div>
+    <%= render 'hosted_events' %>
+  </div>
+  <div>
+    <%= render 'upcoming_events' %>
+  </div>
+  <div>
+    <%= render 'past_events' %>
+  </div>
 </div>

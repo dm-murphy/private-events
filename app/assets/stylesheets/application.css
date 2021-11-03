@@ -116,6 +116,7 @@ h2 {
   padding: 20px;
   background-color: #5d85ba;
   color: #fff200;
+  min-width: 275px;
 }
 
 .event-list {
@@ -165,4 +166,79 @@ h2 {
   margin: 10px 10px 10px 10px;
   padding: 20px;
   background-color: #6d7a88;
+  min-width: 275px;
+}
+
+.user-container {
+  display: flex;
+  flex-direction: row;
+  /* align-items: flex-start; */
+}
+
+.user-event-container {
+  border-radius: 10px;
+  margin: 10px 10px 10px 10px;
+  padding: 20px;
+  background-color: orange;
+  min-width: 275px;
+}
+
+.user-event-list {
+  list-style: none;
+  padding-left: 0;
+  color: black;
+}
+
+.user-header {
+  align-self: center;
+  text-transform: lowercase;
+  text-align: center;
+  font-size: 24px;
+  font-weight: 300;
+  text-decoration: underline #18509d;
+}
+
+.user-details-button {
+  background-color: white;
+  border: none;
+  border-radius: 25px;
+  padding: 10px 20px 10px 20px;
+}
+
+.user-details-button a {
+  color: black;
+  font-weight: bold;
+  text-transform: lowercase;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.user-event-title {
+  font-size: 24px;
+  font-weight: bold;
+  padding-bottom: 5px;
+  color: black;
+}
+
+.user-event-date {
+  padding-bottom: 3px;
+  font-family: Helvetica, sans-serif;
+  color: white;
+  font-weight: bold;
+}
+
+.user-upcoming-container {
+  background-color: #5d85ba;
+  border-radius: 10px;
+  margin: 10px 10px 10px 10px;
+  padding: 20px;
+  min-width: 275px;
+}
+
+.user-past-container {
+  background-color: #6d7a88;
+  border-radius: 10px;
+  margin: 10px 10px 10px 10px;
+  padding: 20px;
+  min-width: 275px;
 }
