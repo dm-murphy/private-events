@@ -257,6 +257,7 @@ h2 {
   gap: 24px;
   border-radius: 10px;
   padding: 25px;
+  max-width: 500px;
 }
 
 #show-title {
