@@ -2,7 +2,7 @@
 <div class="show-container">
   <h4 id="show-date"><%= @event.date.strftime("%A, %B %-d, %Y") %></h3>
   <h4>Created by <%= link_to @event.creator.email, user_path(@event.creator) %></h3>
-  <p><%= @event.description %></p>
+  <p><%= simple_format(@event.description) %></p>
   <div>
     <% past_events = Event.past %>
     <% if past_events.include?(@event) %>
