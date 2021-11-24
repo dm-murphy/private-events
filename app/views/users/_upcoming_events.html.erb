@@ -1,6 +1,7 @@
 <h3 class="user-header">Upcoming Events</h3>
-<% upcoming_invites = @user.attended_events.where("date >= ?", Time.current) %>
-<% upcoming_invites.each do |event| %>
+<% upcoming_events = @user.attended_events.where("date >= ?", Time.current) %>
+<% sorted_upcoming_events = upcoming_events.sort_by { |event| event['date'] } %>
+<% sorted_upcoming_events.each do |event| %>
   <div class="user-upcoming-container">
     <ul class="user-event-list">
       <li class="user-event-title"><%= event.title %></li>

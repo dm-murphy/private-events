@@ -1,6 +1,7 @@
 <h3 class="user-header">Past Events</h3>
-<% past_invites = @user.attended_events.where("date < ?", Time.current) %>
-<% past_invites.each do |event| %>
+<% past_events = @user.attended_events.where("date < ?", Time.current) %>
+<% sorted_past_events = past_events.sort_by { |event| event['date'] }.reverse %>
+<% sorted_past_events.each do |event| %>
   <div class="user-past-container">
     <ul class="user-event-list">
       <li class="user-event-title"><%= event.title %></li>

@@ -1,5 +1,7 @@
 <h3 class="user-header">Hosted Events</h3>
-<% @user.events.each do |event| %>
+<% hosted_events = @user.events %>
+<% sorted_hosted_events = hosted_events.sort_by { |event| event['date'] }.reverse %>
+<% sorted_hosted_events.each do |event| %>
   <div class="user-event-container">
     <ul class="user-event-list">
       <li class="user-event-title"><%= event.title %></li>
