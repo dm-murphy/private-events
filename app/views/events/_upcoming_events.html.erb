@@ -1,5 +1,5 @@
 <h3 id="upcoming">Upcoming Events</h3>
-  <% sorted_upcoming_events = @upcoming_events.sort_by { |event| event['date'] }.reverse %>
+  <% sorted_upcoming_events = @upcoming_events.sort_by { |event| event['date'] } %>
   <% sorted_upcoming_events.each do |event| %>
     <div class="event-container">
       <ul class="event-list">
