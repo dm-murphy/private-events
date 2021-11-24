@@ -14,7 +14,7 @@ Creators of an event can edit or delete their events as well. Technically, creat
 
 Check out this [Private Events](https://sleepy-citadel-75700.herokuapp.com/) app running on Heroku.
 
-[Screen-Shot-2021-11-23-at-7-41-14-PM.png](https://postimg.cc/gx1yTMjR)
+![User profile with event cards](Private_Events_Screen_Shot.png)
 
 ## Try It Local
 
