@@ -25,6 +25,9 @@ Check out this [Private Events](https://sleepy-citadel-75700.herokuapp.com/) app
 $ git clone git@github.com:dm-murphy/private-events.git
 $ bundle install
 $ rails db:migrate
+
+# Note: If Webpacker throws a MissingEntryError try the following command:
+$ rake webpacker:install
 ```
 
 ## What Was Learned
